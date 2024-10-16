@@ -25,9 +25,9 @@ def predict():
             prediction = model.predict(checkprediction)
             output = prediction[0]
             if output == 1:
-                pred = "You are safe!! This is a Legitimate Website."
+                pred = "Safe!! This is a Legitimate Website."
             else:
-                pred = "You are on the wrong site. Be cautious!"
+                pred = "Suspicious. Be cautious!"
             return render_template('predict.html', prediction=pred, url="The URL is: " + url)
         except Exception as e:
             return render_template('predict.html', prediction='An error occurred: {}'.format(e), url="The URL is: " + url)
